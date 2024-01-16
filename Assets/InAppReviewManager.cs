@@ -50,7 +50,8 @@ namespace ColorCrowd
         }
         void ShowReviewDialog()
         {
-            reviewDialog.SetActive(true);
+            if(PlayerPrefs.GetInt(STAR_CLICKED_KEY, 0)<=3)
+                reviewDialog.SetActive(true);
         }
         void OnStarClicked(Button starButton)
         {

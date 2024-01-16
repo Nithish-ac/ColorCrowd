@@ -7522,7 +7522,7 @@ PrefabInstance:
     - target: {fileID: 125795157786833389, guid: c5c66e9e07ed18a42b8b90fa30930499,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 125795157786833389, guid: c5c66e9e07ed18a42b8b90fa30930499,
         type: 3}
@@ -7554,10 +7554,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 125795158740810142, guid: c5c66e9e07ed18a42b8b90fa30930499,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 125795159034474995, guid: c5c66e9e07ed18a42b8b90fa30930499,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 125795159139035948, guid: c5c66e9e07ed18a42b8b90fa30930499,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 125795159471535444, guid: c5c66e9e07ed18a42b8b90fa30930499,
         type: 3}
@@ -7632,7 +7642,7 @@ PrefabInstance:
     - target: {fileID: 6839473663272976136, guid: c5c66e9e07ed18a42b8b90fa30930499,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6839473663272976136, guid: c5c66e9e07ed18a42b8b90fa30930499,
         type: 3}
@@ -7703,6 +7713,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8965092221194243830, guid: c5c66e9e07ed18a42b8b90fa30930499,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8001933013397788831, guid: c5c66e9e07ed18a42b8b90fa30930499, type: 3}

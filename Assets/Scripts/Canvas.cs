@@ -26,6 +26,7 @@ public class Canvas : MonoBehaviour
 
     public void NextLevel()
     {
+        ShowAd();
         levelNo++;
         if(levelNo > 50)
         {
@@ -33,13 +34,12 @@ public class Canvas : MonoBehaviour
         }
         PlayerPrefs.SetInt("Level", levelNo);
         SceneManager.LoadScene(levelNo);
-        ShowAd();
     }
 
     public void Reload()
     {
-        SceneManager.LoadScene(levelNo);
         ShowAd();
+        SceneManager.LoadScene(levelNo);
     }
     public void PrivacyPolicy()
     {
@@ -55,6 +55,7 @@ public class Canvas : MonoBehaviour
     }
     public void MainMenu()
     {
+        ShowAd();
         SceneManager.LoadScene("1. Main scene");
     }
     public void ShowAd()

@@ -14,10 +14,6 @@ namespace ColorCrowd
                 Instance = this;
                 DontDestroyOnLoad(gameObject);
             }
-            else
-            {
-                Destroy(gameObject);
-            }
         }
         // Start is called before the first frame update
         void Start()
@@ -29,14 +25,15 @@ namespace ColorCrowd
 
         void InitBanner()
         {
-            IronSource.Agent.loadBanner(new IronSourceBannerSize(320, 50), IronSourceBannerPosition.BOTTOM);
+            IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.BOTTOM);
             IronSource.Agent.displayBanner();
         }
-        public void LoadFullScreen()
+        public void ShowFullScreen()
         {
             IronSource.Agent.loadInterstitial();
+            Invoke(nameof(EnableAd),1f);
         }
-        public void ShowFullScreen()
+        public void EnableAd()
         {
             IronSource.Agent.showInterstitial();
         }
