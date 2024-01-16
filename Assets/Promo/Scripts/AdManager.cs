@@ -154,7 +154,7 @@ public class AdManager : MonoBehaviour
             zone = null;
 
         ShowOptions options = new ShowOptions();
-        options.resultCallback = AdCallbackhandler;
+        //options.resultCallback = AdCallbackhandler;
 
         if (Advertisement.isInitialized)
         {

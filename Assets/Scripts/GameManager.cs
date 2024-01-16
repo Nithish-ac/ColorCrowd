@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using ColorCrowd;
 
 public class GameManager : MonoBehaviour
 {
@@ -131,6 +132,7 @@ public class GameManager : MonoBehaviour
                 {
                     if(endMusicCounter == 0)
                     {
+                        InAppReviewManager.Instance.CompleteLevel();
                         StartCoroutine(LevelCompleteDelay());
                         Win();
                         endMusicCounter++;
@@ -141,6 +143,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (endMusicCounter == 0)
                     {
+                        InAppReviewManager.Instance.CompleteLevel();
                         StartCoroutine(LevelFailDelay());
                         endMusicCounter++;
                     }

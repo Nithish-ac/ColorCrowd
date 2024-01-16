@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using ColorCrowd;
 
 public class Canvas : MonoBehaviour
 {
@@ -32,17 +33,13 @@ public class Canvas : MonoBehaviour
         }
         PlayerPrefs.SetInt("Level", levelNo);
         SceneManager.LoadScene(levelNo);
-        if (AdManager.instance)
-            AdManager.instance.ShowAd();
-
+        ShowAd();
     }
 
     public void Reload()
     {
         SceneManager.LoadScene(levelNo);
-        if (AdManager.instance)
-            AdManager.instance.ShowAd();
-
+        ShowAd();
     }
     public void PrivacyPolicy()
     {
@@ -59,5 +56,9 @@ public class Canvas : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("1. Main scene");
+    }
+    public void ShowAd()
+    {
+        IronSourceAds.Instance.ShowFullScreen();
     }
 }
