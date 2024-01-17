@@ -143,7 +143,6 @@ public class GameManager : MonoBehaviour
                 {
                     if (endMusicCounter == 0)
                     {
-                        InAppReviewManager.Instance.CompleteLevel();
                         StartCoroutine(LevelFailDelay());
                         endMusicCounter++;
                     }

@@ -31,7 +31,7 @@ namespace ColorCrowd
         public void ShowFullScreen()
         {
             IronSource.Agent.loadInterstitial();
-            Invoke(nameof(EnableAd),1f);
+            EnableAd();
         }
         public void EnableAd()
         {
