@@ -27,8 +27,12 @@ public class Canvas : MonoBehaviour
     public void NextLevel()
     {
         ShowAd();
+        Invoke(nameof(LoadNextLevel), 1f);
+    }
+    public void LoadNextLevel()
+    {
         levelNo++;
-        if(levelNo > 50)
+        if (levelNo > 50)
         {
             levelNo = 1;
         }
@@ -39,6 +43,10 @@ public class Canvas : MonoBehaviour
     public void Reload()
     {
         ShowAd();
+        Invoke(nameof(ReloadScene), 1f);
+    }
+    public void ReloadScene()
+    {
         SceneManager.LoadScene(levelNo);
     }
     public void PrivacyPolicy()
@@ -56,10 +64,14 @@ public class Canvas : MonoBehaviour
     public void MainMenu()
     {
         ShowAd();
-        SceneManager.LoadScene("1. Main scene");
+        Invoke(nameof(LoadMainMenu), 1f);
     }
     public void ShowAd()
     {
         IronSourceAds.Instance.ShowFullScreen();
+    }
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("1. Main scene");
     }
 }
