@@ -10,6 +10,7 @@ public class OtherPlayers : MonoBehaviour
     Animator animator;
     Material characterColor;
     Material trailEffect;
+    private Rigidbody _rigidbody;
 
     bool stopPlayerCollision;
 
@@ -18,6 +19,8 @@ public class OtherPlayers : MonoBehaviour
         animator = this.GetComponent<Animator>();
         characterColor = this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material;
         trailEffect = this.gameObject.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().trailMaterial;
+        _rigidbody = gameObject.transform.GetComponent<Rigidbody>();
+        _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private void OnCollisionEnter(Collision other)

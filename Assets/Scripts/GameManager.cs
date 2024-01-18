@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviour
                 }
                 timer = time;
 
-                if(bullets == 0 && (totalEnemies == enemiesDied))
+                if(totalEnemies == enemiesDied)
                 {
                     if(endMusicCounter == 0)
                     {
