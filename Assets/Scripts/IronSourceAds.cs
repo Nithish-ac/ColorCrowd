@@ -20,7 +20,7 @@ namespace ColorCrowd
         {
             IronSource.Agent.init("1d35f3f0d", IronSourceAdUnits.REWARDED_VIDEO, IronSourceAdUnits.INTERSTITIAL, IronSourceAdUnits.BANNER);
             Invoke(nameof(InitBanner), 3);
-            Invoke("LoadFullScreen", 5);
+            Invoke("LoadFullScreen", 2);
         }
 
         void InitBanner()
@@ -28,10 +28,14 @@ namespace ColorCrowd
             IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.BOTTOM);
             IronSource.Agent.displayBanner();
         }
+        public void LoadFullScreen()
+        {
+            IronSource.Agent.loadInterstitial();
+        }
         public void ShowFullScreen()
         {
             IronSource.Agent.loadInterstitial();
-            Invoke(nameof(EnableAd), 0.5f);
+            EnableAd();
         }
         public void EnableAd()
         {

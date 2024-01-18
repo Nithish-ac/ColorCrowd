@@ -38,7 +38,7 @@ namespace ColorCrowd
 
             if (currentLevel % TRIGGER_LEVEL_INTERVAL == 0 && starClicked == 0)
             {
-                ShowReviewDialog();
+                Invoke(nameof(ShowReviewDialog),1f);
             }
 
             foreach (Button starButton in starButtons)
@@ -85,7 +85,7 @@ namespace ColorCrowd
 
             if (currentLevel % TRIGGER_LEVEL_INTERVAL == 0)
             {
-                ShowReviewDialog();
+                Invoke(nameof(ShowReviewDialog), 1f);
             }
         }
     }
