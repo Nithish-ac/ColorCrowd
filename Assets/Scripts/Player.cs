@@ -7,12 +7,15 @@ public class Player : MonoBehaviour
     Animator animator;
     Material characterColor;
     Material trailEffect;
+    private Rigidbody _rigidbody;
 
     private void Start()
     {
         animator = this.GetComponent<Animator>();
         characterColor = this.gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material;
         trailEffect = this.gameObject.transform.GetChild(1).GetComponent<ParticleSystemRenderer>().trailMaterial;
+        _rigidbody = gameObject.transform.GetComponent<Rigidbody>();
+        _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private void OnCollisionEnter(Collision other)

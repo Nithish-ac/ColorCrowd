@@ -127,28 +127,27 @@ public class GameManager : MonoBehaviour
                     playerNumber.text = bullets.ToString();
                 }
                 timer = time;
-
-                if(totalEnemies == enemiesDied)
-                {
-                    if(endMusicCounter == 0)
-                    {
-                        InAppReviewManager.Instance.CompleteLevel();
-                        StartCoroutine(LevelCompleteDelay());
-                        Win();
-                        endMusicCounter++;
-                    }
-                    
-                }
-                else if(bullets == 0 && (totalEnemies != enemiesDied))
-                {
-                    if (endMusicCounter == 0)
-                    {
-                        StartCoroutine(LevelFailDelay());
-                        endMusicCounter++;
-                    }
-                    
-                }
             }
+        }
+        if (totalEnemies == enemiesDied)
+        {
+            if (endMusicCounter == 0)
+            {
+                InAppReviewManager.Instance.CompleteLevel();
+                StartCoroutine(LevelCompleteDelay());
+                Win();
+                endMusicCounter++;
+            }
+
+        }
+        else if (bullets == 0 && (totalEnemies != enemiesDied))
+        {
+            if (endMusicCounter == 0)
+            {
+                StartCoroutine(LevelFailDelay());
+                endMusicCounter++;
+            }
+
         }
 
         if (characterMove)

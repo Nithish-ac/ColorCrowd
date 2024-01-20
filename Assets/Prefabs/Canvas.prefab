@@ -2929,7 +2929,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Shoot the Humans
+  m_text: the humans need to drop from the platforms.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 786cfc35d3608e34ea994e488d41e48e, type: 2}
   m_sharedMaterial: {fileID: -3653340762720059778, guid: 786cfc35d3608e34ea994e488d41e48e,
@@ -2963,7 +2963,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

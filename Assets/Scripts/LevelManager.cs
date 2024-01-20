@@ -58,4 +58,9 @@ public class LevelManager : MonoBehaviour
         }
         return false;
     }
+    public void ResetLevelData()
+    {
+        PlayerPrefs.DeleteAll();
+        LoadLevels();
+    }
 }
