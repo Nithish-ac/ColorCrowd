@@ -6,30 +6,56 @@ using UnityEngine;
 public class CanonRotate : MonoBehaviour
 {
     // Start is called before the first frame update
-    Vector3 firstPos;
-    Vector3 secondPos;
+    Vector3 targetPosition;
+    Vector3 initialMousePosition;
+
     public float speed;
 
     public Transform cross;
 
-    private void Update()
+    void Update()
     {
-        if(Input.GetMouseButtonDown(0) && GameManager.instance.startCannonRotation)
+        if (Input.GetMouseButtonDown(0) && GameManager.instance.startCannonRotation)
         {
-            firstPos = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
+            SetTargetPosition();
+            initialMousePosition = Input.mousePosition;
         }
 
-        if(Input.GetMouseButton(0) && GameManager.instance.startCannonRotation)
+        if (Input.GetMouseButton(0) && GameManager.instance.startCannonRotation)
         {
-            secondPos = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
-            Vector3 difference = secondPos - firstPos;
-            //cross.position = new Vector3(difference.x * speed, difference.y * speed, cross.position.z);
-            Quaternion diff = Quaternion.Euler(-difference.y * speed, difference.x * speed,  difference.z * speed);
-            transform.rotation = diff;
-            cross.rotation = Quaternion.Euler((cross.rotation.x - this.transform.rotation.x), (cross.rotation.y - this.transform.rotation.y), 0);
-
-            
-            //firstPos = secondPos;
+            RotateCannon();
+            HandleDragging();
         }
+    }
+
+    void SetTargetPosition()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            targetPosition = hit.point;
+        }
+    }
+
+    void RotateCannon()
+    {
+        Vector3 direction = targetPosition - transform.position;
+        Quaternion toRotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, toRotation, speed * Time.deltaTime);
+
+        // Align crosshair with the cannon's forward direction
+        cross.forward = direction.normalized;
+    }
+
+    void HandleDragging()
+    {
+        Vector3 currentMousePosition = Input.mousePosition;
+        Vector3 mouseDelta = currentMousePosition - initialMousePosition;
+
+        // Do something with mouseDelta for dragging, e.g., move an object or camera
+
+        initialMousePosition = currentMousePosition;
     }
 }

@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
     public bool moveCamera;
     public bool fire;
     public bool startCannonRotation;
+    bool canShoot = true;
+
 
     [Header("All ints and floats are here")]
     public float totalEnemies;
@@ -113,20 +115,9 @@ public class GameManager : MonoBehaviour
 
         if (fire && Input.GetMouseButton(0))
         {
-            timer -= Time.deltaTime;
-            if(timer <= 0)
+            if (canShoot)
             {
-                if (counter < playersList.Count)
-                {
-                    GameObject bulletObj = Instantiate(bullet, cannonShootPoint.position, cannonShootPoint.rotation);
-                    bulletObj.transform.rotation = Quaternion.Euler(58, 0, 0);
-                    canonAnim.Play("Canon fire");                    
-                    CanonShot();                   
-                    counter++;
-                    bullets--;
-                    playerNumber.text = bullets.ToString();
-                }
-                timer = time;
+                Shoot();
             }
         }
         if (totalEnemies == enemiesDied)
@@ -166,7 +157,28 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    void Shoot()
+    {
+        if (counter < playersList.Count && bullets > 0)
+        {
+            GameObject bulletObj = Instantiate(bullet, cannonShootPoint.position, cannonShootPoint.rotation);
+            bulletObj.transform.rotation = Quaternion.Euler(58, 0, 0);
+            canonAnim.Play("Canon fire");
+            CanonShot();
+            counter++;
+            bullets--;
+            playerNumber.text = bullets.ToString();
+            canShoot = false;
 
+            // Invoke the ResetShootFlag method after 0.35 seconds
+            Invoke("ResetShootFlag", 0.35f);
+        }
+    }
+
+    void ResetShootFlag()
+    {
+        canShoot = true;
+    }
     public void CharacterParentCheck()
     {
         if(playersList.Count == 0)
