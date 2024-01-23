@@ -23,6 +23,7 @@ public class EnemyScript : MonoBehaviour
         {
             GameManager.instance.EnemyDiedIncrementer();
             calculated = true;
+            gameObject.SetActive(false);
         }
     }
 
@@ -41,6 +42,7 @@ public class EnemyScript : MonoBehaviour
         {
             GameManager.instance.EnemyDiedIncrementer();
             calculated = true;
+            gameObject.SetActive(false);
         }
     }
 }

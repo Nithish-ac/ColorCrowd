@@ -113,13 +113,6 @@ public class GameManager : MonoBehaviour
         PlayerProgress();
         EnemyProgress();
 
-        if (fire && Input.GetMouseButton(0))
-        {
-            if (canShoot)
-            {
-                Shoot();
-            }
-        }
         if (totalEnemies == enemiesDied)
         {
             if (endMusicCounter == 0)
@@ -157,9 +150,9 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    void Shoot()
+    public void Shoot()
     {
-        if (counter < playersList.Count && bullets > 0)
+        if (counter < playersList.Count && bullets > 0 && canShoot)
         {
             GameObject bulletObj = Instantiate(bullet, cannonShootPoint.position, cannonShootPoint.rotation);
             bulletObj.transform.rotation = Quaternion.Euler(58, 0, 0);

@@ -74,4 +74,12 @@ public class Canvas : MonoBehaviour
     {
         SceneManager.LoadScene("1. Main scene");
     }
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1f;
+    }
 }
