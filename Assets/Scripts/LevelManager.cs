@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class LevelManager : MonoBehaviour
                         if (image != null)
                         {
                             image.enabled = false;
+                            button.interactable = true;
                         }
                     }
                 }
@@ -62,5 +64,6 @@ public class LevelManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         LoadLevels();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
