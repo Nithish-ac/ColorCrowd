@@ -29,7 +29,8 @@ Transform:
   m_GameObject: {fileID: 5808337528249844691}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6654690655926113865}
   m_RootOrder: 0
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5808337528249844691}
-  m_Mesh: {fileID: -269130626624049065, guid: fffaf3f0a7e803f4f8458194725c4272, type: 3}
+  m_Mesh: {fileID: -2432090755550338912, guid: fd07011ba5f148141b4c9bf163e73672, type: 3}
 --- !u!23 &5448124394398851590
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53,15 +54,16 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e87ef8fccee01734e8b0949cce0ad11e, type: 2}
-  - {fileID: 2100000, guid: 95a4aa4134f11ae4b83114454e8b883a, type: 2}
+  - {fileID: 2100000, guid: 85958503e46e5dc43a60c7e9cd4de952, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,6 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &6654690656061934275
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -95,10 +98,10 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: -269130626624049065, guid: fffaf3f0a7e803f4f8458194725c4272, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 17df49d4c1345ce479f33392576d7bd3, type: 2}
 --- !u!95 &6654690656061934272
 Animator:
-  serializedVersion: 3
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -111,10 +114,12 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6654690655926113862
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +146,7 @@ Transform:
   m_LocalRotation: {x: -0.00000013240823, y: 0.7071068, z: -0.7071068, w: -0.00000013240823}
   m_LocalPosition: {x: 0, y: 0.69, z: 99.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6615942444994746729}
   m_Father: {fileID: 0}

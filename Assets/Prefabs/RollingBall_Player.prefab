@@ -91,6 +91,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: RollingBall
       objectReference: {fileID: 0}
+    - target: {fileID: 6811320759713712797, guid: c5cbc716cfd9db74e8e089e3c97ee7be,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2432090755550338912, guid: 1ea0df1887023214ba7865ccc7033ab3,
+        type: 3}
+    - target: {fileID: 8106387844498731820, guid: c5cbc716cfd9db74e8e089e3c97ee7be,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8106387844498731820, guid: c5cbc716cfd9db74e8e089e3c97ee7be,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df2aee8058d992243a151aad5f5c7225, type: 2}
+    - target: {fileID: 8106387844498731820, guid: c5cbc716cfd9db74e8e089e3c97ee7be,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 4362962105363994262, guid: 266cc258c40fecd44ba109197d031518,
+        type: 3}
+    - target: {fileID: 8106387844498731820, guid: c5cbc716cfd9db74e8e089e3c97ee7be,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 4362962105363994262, guid: 266cc258c40fecd44ba109197d031518,
+        type: 3}
     - target: {fileID: 8359592903162798216, guid: c5cbc716cfd9db74e8e089e3c97ee7be,
         type: 3}
       propertyPath: m_RootOrder
